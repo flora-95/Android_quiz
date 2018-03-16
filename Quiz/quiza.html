@@ -1,0 +1,38 @@
+  <!DOCTYPE html>
+<head>
+<title>Quiz</title>
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+<h1>Quiz on Important Facts</h1><br><br>
+<script language="JavaScript">
+function getParams(){
+var idx = document.URL.indexOf('?');
+var params = new Array();
+if (idx != -1) {
+var pairs = document.URL.substring(idx+1, document.URL.length).split('&');
+for (var i=0; i<pairs.length; i++){
+nameVal = pairs[i].split('=');
+params[nameVal[0]] = nameVal[1];
+}
+}
+return params;
+}
+params = getParams();
+firstname = unescape(params["fname"]);
+document.write("WELCOME TO ANDROID QUIZ " + firstname + "<br>");
+</script>
+
+<div class="quiz-container">
+  <div id="quiz"></div>
+</div>
+<button id="previous">Previous Question</button>
+<button id="next">Next Question</button>
+<button id="submit">Submit Quiz</button>
+<div id="results"></div>
+
+<script src="quiz.js"></script>
+
+
+<body>
+</html>
